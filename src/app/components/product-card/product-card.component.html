@@ -1,1 +1,11 @@
-<p>product-card works!</p>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" [ngSrc]="product.images[0]" [alt]="product.title" width="283" height="300">
+  <div class="card-body d-flex flex-column justify-content-between">
+    <div>
+      <h5 class="card-title">{{ product.title }}</h5>
+      <p>{{ product.price | currency: 'USD' }}</p>
+    </div>
+    <p class="card-text">{{ product.description }}</p>
+    <a (click)="addToCart(product)" class="btn btn-primary">Add to cart</a>
+  </div>
+</div>

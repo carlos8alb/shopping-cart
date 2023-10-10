@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,5 +11,8 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+
+  private shoppingCartService = inject(ShoppingCartService)
+  getTotalAmountShoppingCart$ = this.shoppingCartService.getTotalAmountShoppingCart
 
 }

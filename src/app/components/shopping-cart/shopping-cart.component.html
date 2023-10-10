@@ -1,1 +1,18 @@
-<p>shopping-cart works!</p>
+<div class="pt-3">
+  <p class="h6 text-center">Shopping Cart Products</p>
+  <p class="text-center">
+    <b>
+      {{ shoppingCartTotal$ | async | currency: 'USD'}}
+    </b>
+  </p>
+  <hr>
+  <div *ngIf="(shoppingCartProducts$ | async) as products">
+    <p *ngFor="let product of products; index as index">
+      <span class="h6">{{ product.title }}</span>
+      <span> {{ product.price | currency: 'USD'}} </span>
+      <button (click)="deleteProductShoppingCart(index)" class="btn btn-sm btn-danger py-0 align-top">
+        X
+      </button>
+    </p>
+  </div>
+</div>

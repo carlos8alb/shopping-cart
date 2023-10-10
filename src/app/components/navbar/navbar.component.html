@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark bg-primary">
+<nav class="navbar navbar-dark bg-primary sticky-top">
   <a class="navbar-brand mx-3" routerLink="/home">
     <img src="assets/shopping-cart.svg" width="30" height="30" class="d-inline-block align-top"
       alt="shopping-cart-logo">
@@ -6,4 +6,9 @@
       Shopping Cart
     </span>
   </a>
+  <div class="mx-3 rounded-5">
+    <img src="assets/shopping-cart.svg" width="30" height="30" class="d-inline-block align-top"
+      alt="shopping-cart-logo">
+    <span class="badge badge-danger bg-danger rounded align-bottom">{{ getTotalAmountShoppingCart$ | async | number }}</span>
+  </div>
 </nav>
